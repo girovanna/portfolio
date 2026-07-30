@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna Vergé · UGC Creator</title>
+    <meta name="description" content="Contenido UGC para paid ads que parece real — testimonios, demos y hooks visuales para marcas de belleza.">
+    <meta property="og:title" content="Anna Vergé · UGC Creator">
+    <meta property="og:description" content="Contenido UGC auténtico para paid ads. Beauty & Lifestyle. Barcelona.">
+    <meta property="og:image" content="https://girovanna.github.io/portfolio/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Google tag (gtag.js) si quieres analytics luego -->
+    <style>
+        :root {
+            --bg: #faf9f7;
+            --text: #1a1a1a;
+            --text-light: #6b6b6b;
+            --accent: #c79a7a;
+            --accent-light: #f0e6de;
+            --border: #e8e3de;
+            --white: #ffffff;
+            --section-gap: 80px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+        .hero h1 span { color: var(--accent); }
+        .hero .tagline {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+        .hero .badge {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .hero .langs { color: var(--text-light); font-size: 0.9rem; margin-top: 8px; }
+        .hero .langs strong { color: var(--text); }
+
+        /* Buttons */
+        .btn-group { margin-top: 28px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: var(--text);
+            color: var(--white);
+        }
+        .btn-primary:hover { background: #333; transform: translateY(-1px); }
+        .btn-secondary {
+            background: var(--white);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover { border-color: var(--text); transform: translateY(-1px); }
+
+        /* Sections */
+        section { padding: 60px 0; }
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .section-sub {
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+        }
+        .section-sub strong { color: var(--text); }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .testimonial-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .testimonial-card .quote {
+            font-size: 0.95rem;
+            font-style: italic;
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+        .testimonial-card .attribution {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        .testimonial-card .attribution strong { color: var(--text); }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+            margin: 40px 0;
+        }
+        .stat-card {
+            text-align: center;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 16px;
+        }
+        .stat-card .number { font-size: 1.8rem; font-weight: 700; color: var(--accent); }
+        .stat-card .label { font-size: 0.85rem; color: var(--text-light); margin-top: 4px; }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .service-card h3 { font-size: 1rem; margin-bottom: 8px; }
+        .service-card p { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; }
+        .service-card .price {
+            display: inline-block;
+            margin-top: 12px;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 0.95rem;
+        }
+
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .pricing-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px 24px;
+            text-align: center;
+        }
+        .pricing-card.featured {
+            border-color: var(--accent);
+            box-shadow: 0 4px 20px rgba(199, 154, 122, 0.15);
+            position: relative;
+        }
+        .pricing-card.featured::before {
+            content: '⭐ Más popular';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: white;
+            padding: 4px 14px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .pricing-card h3 { font-size: 1.1rem; margin-bottom: 4px; }
+        .pricing-card .amount { font-size: 2rem; font-weight: 700; color: var(--accent); margin: 12px 0; }
+        .pricing-card ul { list-style: none; text-align: left; margin: 16px 0; }
+        .pricing-card ul li { padding: 6px 0; font-size: 0.9rem; color: var(--text-light); }
+        .pricing-card ul li::before { content: '✓ '; color: var(--accent); font-weight: 700; }
+
+        /* Brands */
+        .brands {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        .brand-tag {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Process */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+        }
+        .step {
+            text-align: center;
+            padding: 20px;
+        }
+        .step .num {
+            display: inline-flex;
+            width: 40px; height: 40px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .step h4 { font-size: 0.95rem; margin-bottom: 4px; }
+        .step p { font-size: 0.85rem; color: var(--text-light); }
+
+        /* Contact CTA */
+        .cta {
+            background: var(--text);
+            color: var(--white);
+            border-radius: 16px;
+            padding: 48px 32px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .cta h2 { font-size: 1.6rem; margin-bottom: 8px; }
+        .cta p { opacity: 0.8; margin-bottom: 24px; }
+        .cta .btn { background: var(--white); color: var(--text); }
+        .cta .btn:hover { background: var(--accent-light); }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            border-top: 1px solid var(--border);
+        }
+        footer a { color: var(--text); text-decoration: none; }
+        footer a:hover { color: var(--accent); }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 1.3rem; }
+            section { padding: 40px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <div class="container">
+        <section class="hero">
+            <div class="badge">📸 UGC Creator · Beauty & Lifestyle</div>
+            <h1>Contenido que <span>parece real</span><br>porque lo es.</h1>
+            <p class="tagline">
+                Creo contenido para paid ads que conecta de verdad — testimonios, demos y hooks visuales para marcas de belleza.
+            </p>
+            <div class="langs">
+                <strong>ES</strong> · EN · FR · IT · CAT
+            </div>
+            <div class="btn-group">
+                <a href="#contacto" class="btn btn-primary">Trabajemos juntos →</a>
+                <a href="https://www.instagram.com/annavg.ugc" target="_blank" class="btn btn-secondary">Instagram @annavg.ugc</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- STATS -->
+    <div class="container">
+        <div class="stats">
+            <div class="stat-card">
+                <div class="number">4+</div>
+                <div class="label">Colaboraciones pagadas</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">5/5</div>
+                <div class="label">Valoración OCU</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">5</div>
+                <div class="label">Idiomas</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">3</div>
+                <div class="label">Países con presencia</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <div class="container">
+        <section>
+            <h2 class="section-title">Lo que dicen las marcas</h2>
+            <p class="section-sub">Feedback real de clientes con los que he colaborado.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="quote">"Entiende muy bien lo que necesita una marca para conectar con su audiencia. Su contenido es natural y de alta calidad, justo lo que buscábamos."</p>
+                    <div class="attribution"><strong>OCU</strong> · Colaboración pagada</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"Le pasé el reel a cliente y le encantó. Me pregunta si lo podemos usar en ads."</p>
+                    <div class="attribution"><strong>Fitlovas</strong> · Colaboración pagada + Ads</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"Nos gustó especialmente la idea del vídeo y el guion propuesto. La comunicación fue fluida y profesional de principio a fin."</p>
+                    <div class="attribution"><strong>Cocunat</strong> · Contenido raw</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"Nos ha encantado el resultado. ¿Podemos añadir promoción para aumentar el alcance?"</p>
+                    <div class="attribution"><strong>Jardín de Hadas</strong> · Solicitado para ads</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- TYPES OF CONTENT -->
+    <div class="container">
+        <section>
+            <h2 class="section-title">Lo que creo para tu marca</h2>
+            <p class="section-sub">Formatos probados que funcionan en paid ads y orgánico.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🎬 Hooks visuales</h3>
+                    <p>Primeros 3 segundos que paran el scroll. Con texto en pantalla + movimiento. Ideal para A/B testing de copy.</p>
+                    <span class="price">Desde 150€</span>
+                </div>
+                <div class="service-card">
+                    <h3>🧴 Demo de producto</h3>
+                    <p>Aplicación real, textura visible, antes/después. Perfecto para página de producto y campañas de conversión.</p>
+                    <span class="price">Desde 150€</span>
+                </div>
+                <div class="service-card">
+                    <h3>💬 Testimonio</h3>
+                    <p>Recomendación directa, problema/solución, por qué lo usas cada día. Ideal para retargeting.</p>
+                    <span class="price">Desde 180€</span>
+                </div>
+                <div class="service-card">
+                    <h3>📦 Unboxing / Voz en off</h3>
+                    <p>Sin cara visible. Manos + textura + narración. Para marcas que buscan contenido premium sin rostro.</p>
+                    <span class="price">Desde 120€</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PRICING -->
+    <div class="container">
+        <section>
+            <h2 class="section-title">Packs para tu campaña</h2>
+            <p class="section-sub">Precios claros, sin sorpresas. <strong>Escíbeme con tu briefing y te envío propuesta en 24h.</strong></p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>🚀 Starter</h3>
+                    <div class="amount">200€</div>
+                    <ul>
+                        <li>1 Reel UGC</li>
+                        <li>2 Fotos producto</li>
+                        <li>Caption optimizado</li>
+                        <li>Derechos 6 meses (orgánico)</li>
+                    </ul>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>📈 Growth</h3>
+                    <div class="amount">500€</div>
+                    <ul>
+                        <li>3 Reels UGC</li>
+                        <li>5 Fotos producto/lifestyle</li>
+                        <li>Captions + hashtags</li>
+                        <li>Derechos 12 meses (org + ads)</li>
+                        <li>1 revisión incluida</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>💎 Premium</h3>
+                    <div class="amount">900€</div>
+                    <ul>
+                        <li>5 Reels UGC</li>
+                        <li>10 Fotos</li>
+                        <li>Estrategia + calendario</li>
+                        <li>Derechos ilimitados</li>
+                        <li>2 revisiones + prioridad</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- BRANDS -->
+    <div class="container">
+        <section>
+            <h2 class="section-title">Marcas que ya han confiado</h2>
+            <p class="section-sub">He trabajado con marcas en España, Chile y Reino Unido.</p>
+            <div class="brands">
+                <span class="brand-tag">Cocunat</span>
+                <span class="brand-tag">OCU</span>
+                <span class="brand-tag">Fitlovas</span>
+                <span class="brand-tag">Jardín de Hadas</span>
+                <span class="brand-tag">NALA</span>
+                <span class="brand-tag">Pantene</span>
+            </div>
+        </section>
+    </div>
+
+    <!-- PROCESS -->
+    <div class="container">
+        <section>
+            <h2 class="section-title">Mi proceso de trabajo</h2>
+            <p class="section-sub">De principio a fin, siempre con comunicación fluida.</p>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="num">1</div>
+                    <h4>Briefing</h4>
+                    <p>Cuéntame tu producto, objetivo y tono</p>
+                </div>
+                <div class="step">
+                    <div class="num">2</div>
+                    <h4>Concepto</h4>
+                    <p>Propongo guion y enfoque creativo</p>
+                </div>
+                <div class="step">
+                    <div class="num">3</div>
+                    <h4>Producción</h4>
+                    <p>Grabo y edito el contenido</p>
+                </div>
+                <div class="step">
+                    <div class="num">4</div>
+                    <h4>Entrega</h4>
+                    <p>Listo para usar en ads o redes</p>
+                </div>
+            </div>
+            <p style="text-align:center;color:var(--text-light);font-size:0.9rem;margin-top:16px;">
+                Entrego variaciones de hook para A/B testing en paid ads bajo petición.
+            </p>
+        </section>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="container">
+        <section>
+            <h2 class="section-title">Sobre mí</h2>
+            <p class="section-sub">Quién soy, cómo trabajo, por qué funciona.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
+                <div class="service-card">
+                    <h3>📍 Quién soy</h3>
+                    <p>Soy Anna, creadora UGC beauty basada en Barcelona. Creo contenido que parece real porque lo es — sin sobreactuación, sin filtros que disfracen el producto.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🎯 Cómo trabajo</h3>
+                    <p>Me especializo en testimonios, demos y hooks visuales con narrativa cercana y estética cuidada. Propongo el guion, grabo y entrego listo para usar en ads o redes.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🌍 Por qué funciona</h3>
+                    <p>Trabajo en <strong>ES · EN · FR · IT · CAT</strong> — contenido para marcas con presencia en España, Francia, Italia y Reino Unido desde una sola creadora.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CTA -->
+    <div class="container" id="contacto">
+        <section class="cta">
+            <h2>¿Tienes una campaña en mente?</h2>
+            <p>Cuéntame el producto y el objetivo. Te propongo cómo puedo ayudarte y te envío presupuesto en menos de 24h.</p>
+            <a href="mailto:annavg.ugc@gmail.com?subject=Colaboración%20UGC&body=Hola%20Anna,%20me%20gustaría%20hablar%20sobre%20una%20colaboración%20UGC..." class="btn">✉️ annavg.ugc@gmail.com</a>
+            <p style="margin-top:16px;opacity:0.7;font-size:0.85rem;">
+                O escríbeme por Instagram <a href="https://www.instagram.com/annavg.ugc" style="color:white;text-decoration:underline;">@annavg.ugc</a>
+            </p>
+            <p style="margin-top:8px;font-size:0.85rem;opacity:0.7;">🟢 Disponible para nuevas colaboraciones</p>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="container">
+        <footer>
+            <p>© 2026 Anna Vergé · Creadora UGC · Beauty & Lifestyle · Barcelona</p>
+            <p style="margin-top:8px;">
+                <a href="mailto:annavg.ugc@gmail.com">annavg.ugc@gmail.com</a> · 
+                <a href="https://www.instagram.com/annavg.ugc" target="_blank">@annavg.ugc</a> · 
+                ES · EN · FR · IT · CAT
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html>
