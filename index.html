@@ -96,11 +96,13 @@
             font-size: 1.6rem;
             font-weight: 700;
             margin-bottom: 8px;
+            text-align: center;
         }
         .section-sub {
             color: var(--text-light);
             margin-bottom: 32px;
             font-size: 0.95rem;
+            text-align: center;
         }
         .section-sub strong { color: var(--text); }
         .sub-cat {
@@ -108,6 +110,7 @@
             font-weight: 700;
             margin: 28px 0 16px;
             color: var(--accent);
+            text-align: center;
         }
 
         /* Video grid */
@@ -219,17 +222,19 @@
         .brands {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 32px 44px;
             justify-content: center;
             align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
         .brand-logo {
-            height: 44px;
+            height: 64px;
             width: auto;
-            max-width: 130px;
+            max-width: 160px;
             object-fit: contain;
             filter: grayscale(100%);
-            opacity: 0.7;
+            opacity: 0.75;
             transition: all 0.2s;
             cursor: pointer;
         }
@@ -282,8 +287,8 @@
             object-fit: contain;
             border-radius: 12px;
         }
-        .cta h2 { font-size: 1.6rem; margin-bottom: 8px; }
-        .cta p { opacity: 0.8; margin-bottom: 20px; }
+        .cta h2 { font-size: 1.9rem; margin-bottom: 12px; }
+        .cta p { opacity: 0.85; margin-bottom: 20px; font-size: 1.1rem; }
         .cta .btn { background: var(--white); color: var(--text); }
         .cta .btn:hover { background: var(--accent-light); }
         .cta .cta-links { margin-top: 8px; font-size: 0.9rem; }
@@ -357,27 +362,26 @@
     <!-- BEAUTY — subdividida -->
     <div class="container">
         <section>
-            <h2 class="section-title">🧴 Beauty</h2>
+            <h2 class="section-title">Beauty</h2>
             <p class="section-sub">Skincare · Makeup · Cabello</p>
 
-            <h3 class="sub-cat">✨ Skincare</h3>
+            <h3 class="sub-cat">Skincare</h3>
             <div class="video-grid">
                 <div class="video-card"><video src="assets/videos/Beauty-Niacinamida-Ordinary.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">The Ordinary</div><div class="v-type">Niacinamida · Hook + voz off</div></div></div>
                 <div class="video-card"><video src="assets/videos/Beauty-Bioderma-Aceite.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Bioderma</div><div class="v-type">Aceite corporal · Hook + uso</div></div></div>
-                <div class="video-card"><video src="assets/videos/Beauty-Cocunat-Skincare.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Cocunat</div><div class="v-type">Skincare · Hook</div></div></div>
                 <div class="video-card"><video src="assets/videos/Beauty-Garnier-CremaVitaminaC.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Garnier</div><div class="v-type">Vitamina C · Hook + textura</div></div></div>
                 <div class="video-card"><video src="assets/videos/Beauty-NUA-Texturas.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">NUA Cosmetics</div><div class="v-type">Texturas · Plano detalle</div></div></div>
-                <div class="video-card"><video src="assets/videos/Beauty-Labello-Balsamo.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Labello</div><div class="v-type">Bálsamo · Voz off</div></div></div>
             </div>
 
-            <h3 class="sub-cat">💄 Makeup</h3>
+            <h3 class="sub-cat">Makeup</h3>
             <div class="video-grid">
                 <div class="video-card"><video src="assets/videos/Beauty-Sheglam-Bronceador.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Sheglam</div><div class="v-type">Bronceador · Hablando a cámara</div></div></div>
                 <div class="video-card"><video src="assets/videos/Beauty-Flormar-LipCombo.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Flormar</div><div class="v-type">Lip combo · Problema/solución</div></div></div>
                 <div class="video-card"><video src="assets/videos/Beauty-Colorete-Polvo.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Colorete</div><div class="v-type">Polvo · Beneficios + textura</div></div></div>
+                <div class="video-card"><video src="assets/videos/Beauty-Labello-Balsamo.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Labello</div><div class="v-type">Bálsamo · Voz off</div></div></div>
             </div>
 
-            <h3 class="sub-cat">💇 Cabello</h3>
+            <h3 class="sub-cat">Cabello</h3>
             <div class="video-grid">
                 <div class="video-card"><video src="assets/videos/Beauty-ALEA-GamaLisos.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">ALEA</div><div class="v-type">Gama LISOS · 3 productos</div></div></div>
                 <div class="video-card"><video src="assets/videos/Beauty-KukitHair-Texturas.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Kukit Hair</div><div class="v-type">Gama productos · Texturas</div></div></div>
@@ -393,7 +397,7 @@
     <!-- EXPERIENCIAS -->
     <div class="container">
         <section>
-            <h2 class="section-title">🎪 Experiencias</h2>
+            <h2 class="section-title">Experiencias</h2>
             <p class="section-sub">Tiendas, eventos y lugares — contenido que muestra la experiencia real.</p>
             <div class="video-grid">
                 <div class="video-card"><video src="assets/videos/Lifestyle-Clarel-Evento.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Clarel</div><div class="v-type">Evento · Experiencia</div></div></div>
@@ -407,7 +411,7 @@
     <!-- LIFESTYLE -->
     <div class="container">
         <section>
-            <h2 class="section-title">✨ Lifestyle</h2>
+            <h2 class="section-title">Lifestyle</h2>
             <p class="section-sub">Unboxings, stopmotion y contenido de la vida real.</p>
             <div class="video-grid">
                 <div class="video-card"><video src="assets/videos/Lifestyle-AliExpress-Unboxing.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">AliExpress</div><div class="v-type">Unboxing</div></div></div>
@@ -423,7 +427,7 @@
     <!-- HOME -->
     <div class="container">
         <section>
-            <h2 class="section-title">🏠 Home</h2>
+            <h2 class="section-title">Home</h2>
             <p class="section-sub">Producto en espacios reales.</p>
             <div class="video-grid">
                 <div class="video-card"><video src="assets/videos/Home-Alfombra.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Alfombra</div><div class="v-type">Problema/solución · Hook</div></div></div>
@@ -446,7 +450,7 @@
                 </div>
                 <div class="testimonial-card">
                     <p class="quote">"Está perfecto así. Un placer trabajar contigo."</p>
-                    <div class="attribution"><strong>OCU</strong> · Colaboración pagada · ⭐ 5/5</div>
+                    <div class="attribution"><strong>OCU</strong> · Colaboración pagada</div>
                 </div>
                 <div class="testimonial-card">
                     <p class="quote">"Nos gustó especialmente la idea del vídeo y el guion propuesto. La comunicación fue fluida y profesional de principio a fin."</p>
@@ -466,11 +470,11 @@
                 </div>
                 <div class="testimonial-card">
                     <p class="quote">"Le pasé el reel a cliente y le encantó. Me pregunta si lo podemos usar en ads."</p>
-                    <div class="attribution"><strong>Jardín de Hadas</strong> · Colaboración pagada · solicitado para ads (sin cerrar)</div>
+                    <div class="attribution"><strong>Jardín de Hadas</strong> · Colaboración pagada · solicitado para ads</div>
                 </div>
                 <div class="testimonial-card">
                     <p class="quote">"¡Nos encanta! Qué pedazo de vídeo, de verdad. Mil gracias por el cariño."</p>
-                    <div class="attribution"><strong>Chic&Love</strong> · Colaboración</div>
+                    <div class="attribution"><strong>Chic&Love</strong> · Lanzamiento nuevo producto</div>
                 </div>
             </div>
         </section>
@@ -566,6 +570,7 @@
                 <img src="assets/logos/garnier.png" alt="Garnier" class="brand-logo" title="Garnier">
                 <img src="assets/logos/mood.png" alt="Mood" class="brand-logo" title="Mood">
                 <img src="assets/logos/palladio.png" alt="Palladio" class="brand-logo" title="Palladio">
+                <img src="assets/logos/fruta-pura.png" alt="Fruta Pura" class="brand-logo" title="Fruta Pura">
             </div>
         </section>
     </div>
@@ -573,15 +578,15 @@
     <!-- FOTOS UGC -->
     <div class="container">
         <section>
-            <h2 class="section-title">📷 Fotografía UGC</h2>
+            <h2 class="section-title">Fotografía UGC</h2>
             <p class="section-sub">Fotos de producto, texturas y estética cuidada.</p>
             <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;">
-                <img src="assets/fotos/foto-skincare-aesthetic.jpg" alt="Composición aesthetic skincare" style="width:100%;border-radius:12px;border:1px solid var(--border);" loading="lazy">
-                <img src="assets/fotos/foto-skincare.jpg" alt="Skincare" style="width:100%;border-radius:12px;border:1px solid var(--border);" loading="lazy">
-                <img src="assets/fotos/foto-corporales.jpg" alt="Línea de productos corporales" style="width:100%;border-radius:12px;border:1px solid var(--border);" loading="lazy">
-                <img src="assets/fotos/foto-bioderma.jpg" alt="Bioderma" style="width:100%;border-radius:12px;border:1px solid var(--border);" loading="lazy">
-                <img src="assets/fotos/foto-swatches.jpg" alt="Swatches maquillaje" style="width:100%;border-radius:12px;border:1px solid var(--border);" loading="lazy">
-                <img src="assets/fotos/foto-maquillaje.jpg" alt="Maquillaje" style="width:100%;border-radius:12px;border:1px solid var(--border);" loading="lazy">
+                <img src="assets/fotos/foto-skincare-aesthetic.jpg" alt="Composición aesthetic skincare" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;border:1px solid var(--border);" loading="lazy">
+                <img src="assets/fotos/foto-skincare.jpg" alt="Skincare" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;border:1px solid var(--border);" loading="lazy">
+                <img src="assets/fotos/foto-corporales.jpg" alt="Línea de productos corporales" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;border:1px solid var(--border);" loading="lazy">
+                <img src="assets/fotos/foto-bioderma.jpg" alt="Bioderma" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;border:1px solid var(--border);" loading="lazy">
+                <img src="assets/fotos/foto-swatches.jpg" alt="Swatches maquillaje" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;border:1px solid var(--border);" loading="lazy">
+                <img src="assets/fotos/foto-maquillaje.jpg" alt="Maquillaje" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;border:1px solid var(--border);" loading="lazy">
             </div>
         </section>
     </div>
@@ -627,7 +632,7 @@
             <div class="about-grid">
                 <div class="service-card">
                     <h3>📍 Quién soy</h3>
-                    <p>Soy Anna, creadora UGC beauty basada en Barcelona. Creo contenido que parece real porque lo es — sin sobreactuación, sin filtros que disfracen el producto.</p>
+                    <p>Soy Anna, creadora UGC beauty establecida en Barcelona. Creo contenido que parece real porque lo es — sin sobreactuación, sin filtros que disfracen el producto.</p>
                 </div>
                 <div class="service-card">
                     <h3>🎯 Cómo trabajo</h3>
