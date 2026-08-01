@@ -203,8 +203,23 @@
         .brands {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 20px;
             justify-content: center;
+            align-items: center;
+        }
+        .brand-logo {
+            height: 40px;
+            width: auto;
+            max-width: 120px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .brand-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
         }
         .brand-tag {
             background: var(--white);
@@ -457,16 +472,16 @@
             <h2 class="section-title">Marcas que ya han confiado</h2>
             <p class="section-sub">He trabajado con marcas en España, Chile y Reino Unido.</p>
             <div class="brands">
-                <span class="brand-tag">Cocunat</span>
-                <span class="brand-tag">OCU</span>
-                <span class="brand-tag">Fitlovas</span>
-                <span class="brand-tag">Jardín de Hadas</span>
-                <span class="brand-tag">NALA</span>
-                <span class="brand-tag">Pantene</span>
-                <span class="brand-tag">Kukit</span>
-                <span class="brand-tag">Chic&Love</span>
-                <span class="brand-tag">Pintar Números</span>
-                <span class="brand-tag">Alea</span>
+                <img src="assets/logos/cocunat.png" alt="Cocunat" class="brand-logo" title="Cocunat">
+                <img src="assets/logos/ocu.png" alt="OCU" class="brand-logo" title="OCU">
+                <img src="assets/logos/fitlovas.png" alt="Fitlovas" class="brand-logo" title="Fitlovas">
+                <img src="assets/logos/jardin-de-hadas.png" alt="Jardín de Hadas" class="brand-logo" title="Jardín de Hadas">
+                <img src="assets/logos/nala.png" alt="NALA" class="brand-logo" title="NALA">
+                <img src="assets/logos/pantene.png" alt="Pantene" class="brand-logo" title="Pantene">
+                <img src="assets/logos/kukit.png" alt="Kukit" class="brand-logo" title="Kukit">
+                <img src="assets/logos/chiclove.png" alt="Chic&Love" class="brand-logo" title="Chic&Love">
+                <img src="assets/logos/pintar-numeros.png" alt="Pintar Números" class="brand-logo" title="Pintar Números">
+                <img src="assets/logos/alea.png" alt="Alea" class="brand-logo" title="Alea">
             </div>
         </section>
     </div>
