@@ -93,22 +93,23 @@
         /* Sections */
         section { padding: 50px 0; }
         .section-title {
-            font-size: 1.6rem;
-            font-weight: 700;
+            font-size: 2.1rem;
+            font-weight: 800;
             margin-bottom: 8px;
             text-align: center;
+            letter-spacing: -0.01em;
         }
         .section-sub {
             color: var(--text-light);
             margin-bottom: 32px;
-            font-size: 0.95rem;
+            font-size: 1rem;
             text-align: center;
         }
         .section-sub strong { color: var(--text); }
         .sub-cat {
-            font-size: 1.05rem;
+            font-size: 1.15rem;
             font-weight: 700;
-            margin: 28px 0 16px;
+            margin: 32px 0 16px;
             color: var(--accent);
             text-align: center;
         }
@@ -118,6 +119,18 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 16px;
+        }
+        /* Variante pirámide: filas inferiores centradas */
+        .video-grid.pyramid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+        }
+        .video-grid.pyramid .video-card {
+            width: calc(25% - 12px);
+            min-width: 200px;
+            flex: 0 0 auto;
         }
         .video-card {
             background: var(--white);
@@ -269,8 +282,9 @@
 
         /* Contact CTA — foto a la izquierda, texto a la derecha */
         .cta {
-            background: var(--text);
-            color: var(--white);
+            background: var(--accent-light);
+            border: 1px solid var(--border);
+            color: var(--text);
             border-radius: 16px;
             padding: 40px;
             margin-top: 40px;
@@ -287,12 +301,12 @@
             object-fit: contain;
             border-radius: 12px;
         }
-        .cta h2 { font-size: 1.9rem; margin-bottom: 12px; }
-        .cta p { opacity: 0.85; margin-bottom: 20px; font-size: 1.1rem; }
-        .cta .btn { background: var(--white); color: var(--text); }
-        .cta .btn:hover { background: var(--accent-light); }
-        .cta .cta-links { margin-top: 8px; font-size: 0.9rem; }
-        .cta .cta-links a { color: white; text-decoration: underline; }
+        .cta h2 { font-size: 1.9rem; margin-bottom: 12px; color: var(--text); }
+        .cta p { opacity: 0.8; margin-bottom: 20px; font-size: 1.1rem; color: var(--text); }
+        .cta .btn { background: var(--text); color: var(--white); }
+        .cta .btn:hover { background: #333; }
+        .cta .cta-links { margin-top: 8px; font-size: 0.9rem; color: var(--text-light); }
+        .cta .cta-links a { color: var(--accent); text-decoration: underline; }
 
         /* Footer */
         footer {
@@ -382,7 +396,7 @@
             </div>
 
             <h3 class="sub-cat">Cabello</h3>
-            <div class="video-grid">
+            <div class="video-grid pyramid">
                 <div class="video-card"><video src="assets/videos/Beauty-ALEA-GamaLisos.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">ALEA</div><div class="v-type">Gama LISOS · 3 productos</div></div></div>
                 <div class="video-card"><video src="assets/videos/Beauty-KukitHair-Texturas.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Kukit Hair</div><div class="v-type">Gama productos · Texturas</div></div></div>
                 <div class="video-card"><video src="assets/videos/Beauty-Primor-Unboxing.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Primor</div><div class="v-type">Unboxing · Productos pelo</div></div></div>
@@ -413,7 +427,7 @@
         <section>
             <h2 class="section-title">Lifestyle</h2>
             <p class="section-sub">Unboxings, stopmotion y contenido de la vida real.</p>
-            <div class="video-grid">
+            <div class="video-grid pyramid">
                 <div class="video-card"><video src="assets/videos/Lifestyle-AliExpress-Unboxing.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">AliExpress</div><div class="v-type">Unboxing</div></div></div>
                 <div class="video-card"><video src="assets/videos/Lifestyle-Catanies-Unboxing.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Catànies</div><div class="v-type">Unboxing · Música</div></div></div>
                 <div class="video-card"><video src="assets/videos/Lifestyle-Lefties-Unboxing.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Lefties</div><div class="v-type">Unboxing · Voz off</div></div></div>
@@ -580,7 +594,7 @@
         <section>
             <h2 class="section-title">Fotografía UGC</h2>
             <p class="section-sub">Fotos de producto, texturas y estética cuidada.</p>
-            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;">
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
                 <img src="assets/fotos/foto-skincare-aesthetic.jpg" alt="Composición aesthetic skincare" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;border:1px solid var(--border);" loading="lazy">
                 <img src="assets/fotos/foto-skincare.jpg" alt="Skincare" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;border:1px solid var(--border);" loading="lazy">
                 <img src="assets/fotos/foto-corporales.jpg" alt="Línea de productos corporales" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;border:1px solid var(--border);" loading="lazy">
@@ -635,8 +649,8 @@
                     <p>Soy Anna, creadora UGC beauty establecida en Barcelona. Creo contenido que parece real porque lo es — sin sobreactuación, sin filtros que disfracen el producto.</p>
                 </div>
                 <div class="service-card">
-                    <h3>🎯 Cómo trabajo</h3>
-                    <p>Me especializo en testimonios, demos y hooks visuales con narrativa cercana y estética cuidada. Propongo el guion, grabo y entrego listo para usar en ads o redes.</p>
+                    <h3>🎁 Qué incluye cada entrega</h3>
+                    <p>Guion propuesto y aprobado antes de grabar, vídeo editado con música y subtítulos, variaciones de hook para A/B testing y cesión de derechos para orgánico o paid ads según el pack.</p>
                 </div>
                 <div class="service-card">
                     <h3>🌍 Por qué funciona</h3>
