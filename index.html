@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anna Vergé · UGC Creator</title>
-    <meta name="description" content="Contenido UGC para paid ads que parece real — testimonios, demos y hooks visuales para marcas de belleza.">
+    <meta name="description" content="Contenido UGC para paid ads que parece real — testimonios, demos y hooks visuales para marcas de belleza y lifestyle.">
     <meta property="og:title" content="Anna Vergé · UGC Creator">
     <meta property="og:description" content="Contenido UGC auténtico para paid ads. Beauty & Lifestyle. Barcelona.">
-    <meta property="og:image" content="https://girovanna.github.io/portfolio/og-image.jpg">
+    <meta property="og:image" content="https://girovanna.github.io/portfolio/assets/img/portada.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <!-- Google tag (gtag.js) si quieres analytics luego -->
     <style>
         :root {
             --bg: #faf9f7;
@@ -29,12 +28,19 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
-        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
         /* Hero */
         .hero {
-            padding: 80px 0 60px;
+            padding: 60px 0 40px;
             text-align: center;
+        }
+        .hero-img {
+            width: 100%;
+            max-height: 420px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 32px;
         }
         .hero h1 {
             font-size: 2.8rem;
@@ -73,20 +79,13 @@
             font-size: 0.95rem;
             transition: all 0.2s;
         }
-        .btn-primary {
-            background: var(--text);
-            color: var(--white);
-        }
+        .btn-primary { background: var(--text); color: var(--white); }
         .btn-primary:hover { background: #333; transform: translateY(-1px); }
-        .btn-secondary {
-            background: var(--white);
-            color: var(--text);
-            border: 1px solid var(--border);
-        }
+        .btn-secondary { background: var(--white); color: var(--text); border: 1px solid var(--border); }
         .btn-secondary:hover { border-color: var(--text); transform: translateY(-1px); }
 
         /* Sections */
-        section { padding: 60px 0; }
+        section { padding: 50px 0; }
         .section-title {
             font-size: 1.6rem;
             font-weight: 700;
@@ -94,10 +93,43 @@
         }
         .section-sub {
             color: var(--text-light);
-            margin-bottom: 40px;
+            margin-bottom: 32px;
             font-size: 0.95rem;
         }
         .section-sub strong { color: var(--text); }
+
+        /* Hero video */
+        .hero-video-wrap { max-width: 400px; margin: 0 auto; }
+        .hero-video-wrap video {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Video grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+        }
+        .video-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+        .video-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+        .video-card video {
+            width: 100%;
+            aspect-ratio: 9/16;
+            object-fit: cover;
+            background: #000;
+            display: block;
+        }
+        .video-card .v-info { padding: 10px 12px 12px; }
+        .video-card .v-brand { font-size: 0.85rem; font-weight: 700; }
+        .video-card .v-type { font-size: 0.75rem; color: var(--text-light); margin-top: 2px; }
 
         /* Testimonials */
         .testimonials-grid {
@@ -117,10 +149,7 @@
             margin-bottom: 12px;
             line-height: 1.7;
         }
-        .testimonial-card .attribution {
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
+        .testimonial-card .attribution { font-size: 0.85rem; color: var(--text-light); }
         .testimonial-card .attribution strong { color: var(--text); }
 
         /* Stats */
@@ -221,14 +250,6 @@
             filter: grayscale(0%);
             opacity: 1;
         }
-        .brand-tag {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 10px 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
 
         /* Process */
         .process-steps {
@@ -236,10 +257,7 @@
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 16px;
         }
-        .step {
-            text-align: center;
-            padding: 20px;
-        }
+        .step { text-align: center; padding: 20px; }
         .step .num {
             display: inline-flex;
             width: 40px; height: 40px;
@@ -254,6 +272,9 @@
         .step h4 { font-size: 0.95rem; margin-bottom: 4px; }
         .step p { font-size: 0.85rem; color: var(--text-light); }
 
+        /* About */
+        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+
         /* Contact CTA */
         .cta {
             background: var(--text);
@@ -263,6 +284,7 @@
             text-align: center;
             margin-top: 40px;
         }
+        .cta img { max-width: 100%; border-radius: 12px; margin-bottom: 24px; }
         .cta h2 { font-size: 1.6rem; margin-bottom: 8px; }
         .cta p { opacity: 0.8; margin-bottom: 24px; }
         .cta .btn { background: var(--white); color: var(--text); }
@@ -292,6 +314,7 @@
     <!-- HERO -->
     <div class="container">
         <section class="hero">
+            <img src="assets/img/portada.jpg" alt="Anna Vergé · UGC Creator" class="hero-img">
             <div class="badge">📸 UGC Creator · Beauty & Lifestyle</div>
             <h1>Contenido que <span>parece real</span><br>porque lo es.</h1>
             <p class="tagline">
@@ -323,10 +346,93 @@
                 <div class="label">Idiomas</div>
             </div>
             <div class="stat-card">
-                <div class="number">3</div>
-                <div class="label">Países con presencia</div>
+                <div class="number">33</div>
+                <div class="label">Videos creados</div>
             </div>
         </div>
+    </div>
+
+    <!-- HERO VIDEO: FITLOVAS -->
+    <div class="container">
+        <section>
+            <h2 class="section-title">Mi trabajo en paid ads</h2>
+            <p class="section-sub">Fitlovas · campaña de ads · colaboración pagada</p>
+            <div class="hero-video-wrap">
+                <video src="assets/videos/Bienestar-Fitlovas-Ads.mp4" controls preload="metadata" poster=""></video>
+            </div>
+        </section>
+    </div>
+
+    <!-- BEAUTY -->
+    <div class="container">
+        <section>
+            <h2 class="section-title">🧴 Beauty</h2>
+            <p class="section-sub">Skincare · Makeup · Cabello — <strong>16 piezas</strong> para marcas de belleza</p>
+            <div class="video-grid">
+                <div class="video-card"><video src="assets/videos/Beauty-Sheglam-Bronceador.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Sheglam</div><div class="v-type">Bronceador · Hablando a cámara</div></div></div>
+                <div class="video-card"><video src="assets/videos/Beauty-Flormar-LipCombo.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Flormar</div><div class="v-type">Lip combo · Problema/solución</div></div></div>
+                <div class="video-card"><video src="assets/videos/Beauty-Niacinamida-Ordinary.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">The Ordinary</div><div class="v-type">Niacinamida · Hook + voz off</div></div></div>
+                <div class="video-card"><video src="assets/videos/Beauty-Bioderma-Aceite.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Bioderma</div><div class="v-type">Aceite corporal · Hook + uso</div></div></div>
+                <div class="video-card"><video src="assets/videos/Beauty-ALEA-GamaLisos.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">ALEA</div><div class="v-type">Gama LISOS · 3 productos</div></div></div>
+                <div class="video-card"><video src="assets/videos/Beauty-KukitHair-Texturas.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Kukit Hair</div><div class="v-type">Gama productos · Texturas</div></div></div>
+                <div class="video-card"><video src="assets/videos/Beauty-Labello-Balsamo.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Labello</div><div class="v-type">Bálsamo · Voz off</div></div></div>
+                <div class="video-card"><video src="assets/videos/Beauty-Colorete-Polvo.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Colorete</div><div class="v-type">Polvo · Beneficios + textura</div></div></div>
+                <div class="video-card"><video src="assets/videos/Beauty-Primor-Unboxing.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Primor</div><div class="v-type">Unboxing · Productos pelo</div></div></div>
+                <div class="video-card"><video src="assets/videos/Beauty-Extensiones.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Extensiones</div><div class="v-type">Colores · Cámara + prueba</div></div></div>
+                <div class="video-card"><video src="assets/videos/Beauty-MiinCosmetics-Limpiador.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Miin Cosmetics</div><div class="v-type">Limpiador · Texto en pantalla</div></div></div>
+                <div class="video-card"><video src="assets/videos/Beauty-ChicLove-Serum.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Chic&Love</div><div class="v-type">Serum pelo · Problema/solución</div></div></div>
+                <div class="video-card"><video src="assets/videos/Beauty-Cocunat-Skincare.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Cocunat</div><div class="v-type">Skincare · Hook</div></div></div>
+                <div class="video-card"><video src="assets/videos/Beauty-Tresemme-Mascarilla.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Tresemmé</div><div class="v-type">Mascarilla · Antes/después</div></div></div>
+                <div class="video-card"><video src="assets/videos/Beauty-Garnier-CremaVitaminaC.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Garnier</div><div class="v-type">Vitamina C · Hook + textura</div></div></div>
+                <div class="video-card"><video src="assets/videos/Beauty-NUA-Texturas.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">NUA Cosmetics</div><div class="v-type">Texturas · Hook + plano detalle</div></div></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- LIFESTYLE & EXPERIENCIAS -->
+    <div class="container">
+        <section>
+            <h2 class="section-title">🌍 Lifestyle & Experiencias</h2>
+            <p class="section-sub">Planes · Unboxings · Contenido propio — <strong>10 piezas</strong></p>
+            <div class="video-grid">
+                <div class="video-card"><video src="assets/videos/Lifestyle-Clarel-Evento.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Clarel</div><div class="v-type">Evento · Experiencia</div></div></div>
+                <div class="video-card"><video src="assets/videos/Lifestyle-JardinHadas-Tienda.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Jardín de Hadas</div><div class="v-type">Experiencia tienda · Pagada</div></div></div>
+                <div class="video-card"><video src="assets/videos/Lifestyle-Action-Compras.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Action</div><div class="v-type">Compras &lt;10€ · Experiencia</div></div></div>
+                <div class="video-card"><video src="assets/videos/Lifestyle-Asia-Tienda.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Tienda asiática</div><div class="v-type">Experiencia · Voz off</div></div></div>
+                <div class="video-card"><video src="assets/videos/Lifestyle-Barre-Clase.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Clase barre</div><div class="v-type">Cumpleaños · Experiencia</div></div></div>
+                <div class="video-card"><video src="assets/videos/Lifestyle-AliExpress-Unboxing.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">AliExpress</div><div class="v-type">Unboxing</div></div></div>
+                <div class="video-card"><video src="assets/videos/Lifestyle-Catanies-Unboxing.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Catànies</div><div class="v-type">Unboxing · Música</div></div></div>
+                <div class="video-card"><video src="assets/videos/Lifestyle-Lefties-Unboxing.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Lefties</div><div class="v-type">Unboxing · Voz off</div></div></div>
+                <div class="video-card"><video src="assets/videos/Lifestyle-Cuponera-Yapping.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Cuponera</div><div class="v-type">Yapping · Formato que funciona</div></div></div>
+                <div class="video-card"><video src="assets/videos/Lifestyle-Piscina-Stopmotion.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Piscina</div><div class="v-type">Stopmotion · Neceser</div></div></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- HOME -->
+    <div class="container">
+        <section>
+            <h2 class="section-title">🏠 Home</h2>
+            <p class="section-sub">Producto en espacios reales — <strong>4 piezas</strong></p>
+            <div class="video-grid">
+                <div class="video-card"><video src="assets/videos/Home-Alfombra.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Alfombra</div><div class="v-type">Problema/solución · Hook</div></div></div>
+                <div class="video-card"><video src="assets/videos/Home-Temporizador.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Temporizador</div><div class="v-type">Usos · Voz off</div></div></div>
+                <div class="video-card"><video src="assets/videos/Home-Dormity-Cubrecama.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Dormity</div><div class="v-type">Cubrecama · Unboxing</div></div></div>
+                <div class="video-card"><video src="assets/videos/Home-Xiaomi-Aspirador.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Xiaomi</div><div class="v-type">Aspirador · Texto en pantalla</div></div></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- BIENESTAR & SERVICIOS -->
+    <div class="container">
+        <section>
+            <h2 class="section-title">💪 Bienestar & Servicios</h2>
+            <p class="section-sub">Fitness · Derechos del consumidor · ASMR</p>
+            <div class="video-grid">
+                <div class="video-card"><video src="assets/videos/Bienestar-OCU-pagada.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">OCU</div><div class="v-type">Reclamación tren · Pagada</div></div></div>
+                <div class="video-card"><video src="assets/videos/Bienestar-PintarNumeros-ASMR.mp4" controls preload="metadata"></video><div class="v-info"><div class="v-brand">Pintar Números</div><div class="v-type">ASMR · Gifted</div></div></div>
+            </div>
+        </section>
     </div>
 
     <!-- TESTIMONIALS -->
@@ -371,30 +477,7 @@
         </section>
     </div>
 
-    <!-- PORTFOLIO / INSTAGRAM EMBEDS -->
-    <div class="container">
-        <section>
-            <h2 class="section-title">Trabajos recientes</h2>
-            <p class="section-sub">Contenido real para marcas reales. Pasa el dedo para ver más →</p>
-            <div style="display:flex;gap:16px;overflow-x:auto;padding:8px 0 20px;">
-                <div style="min-width:320px;max-width:380px;flex:1;">
-                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Da8roF0sc_s/" data-instgrm-version="14"></blockquote>
-                </div>
-                <div style="min-width:320px;max-width:380px;flex:1;">
-                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DaUlD58MEro/" data-instgrm-version="14"></blockquote>
-                </div>
-                <div style="min-width:320px;max-width:380px;flex:1;">
-                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DaZyZIYMk9k/" data-instgrm-version="14"></blockquote>
-                </div>
-            </div>
-            <script async src="//www.instagram.com/embed.js"></script>
-            <p style="text-align:center;margin-top:8px;">
-                <a href="https://www.instagram.com/annavg.ugc" target="_blank" style="color:var(--accent);font-weight:600;">Ver más en Instagram →</a>
-            </p>
-        </section>
-    </div>
-
-    <!-- TYPES OF CONTENT -->
+    <!-- SERVICES -->
     <div class="container">
         <section>
             <h2 class="section-title">Lo que creo para tu marca</h2>
@@ -524,7 +607,7 @@
         <section>
             <h2 class="section-title">Sobre mí</h2>
             <p class="section-sub">Quién soy, cómo trabajo, por qué funciona.</p>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
+            <div class="about-grid">
                 <div class="service-card">
                     <h3>📍 Quién soy</h3>
                     <p>Soy Anna, creadora UGC beauty basada en Barcelona. Creo contenido que parece real porque lo es — sin sobreactuación, sin filtros que disfracen el producto.</p>
@@ -544,6 +627,7 @@
     <!-- CTA -->
     <div class="container" id="contacto">
         <section class="cta">
+            <img src="assets/img/cta.jpg" alt="¿Tienes una campaña en mente?">
             <h2>¿Tienes una campaña en mente?</h2>
             <p>Cuéntame el producto y el objetivo. Te propongo cómo puedo ayudarte y te envío presupuesto en menos de 24h.</p>
             <a href="mailto:annavg.ugc@gmail.com?subject=Colaboración%20UGC&body=Hola%20Anna,%20me%20gustaría%20hablar%20sobre%20una%20colaboración%20UGC..." class="btn">✉️ annavg.ugc@gmail.com</a>
