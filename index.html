@@ -64,6 +64,36 @@
         }
         .hero .langs { color: var(--text-light); font-size: 0.9rem; margin-top: 8px; }
         .hero .langs strong { color: var(--text); }
+
+        /* Métricas — resultados de contenido */
+        .metrics { padding: 8px 0 36px; }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 26px 0;
+        }
+        .metric { text-align: center; padding: 0 12px; }
+        .metric + .metric { border-left: 1px solid var(--border); }
+        .metric-num {
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: -0.01em;
+            line-height: 1.1;
+        }
+        .metric-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            line-height: 1.35;
+            margin-top: 4px;
+        }
+        @media (max-width: 760px) {
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); row-gap: 22px; }
+            .metric:nth-child(3) { border-left: none; }
+            .metric-num { font-size: 1.3rem; }
+        }
         .hero-photo img {
             width: 100%;
             max-width: 380px;
@@ -369,6 +399,30 @@
                 </div>
                 <div class="hero-photo">
                     <img src="assets/img/portada.jpg" alt="Anna Vergé · UGC Creator">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- MÉTRICAS — resultados de contenido -->
+    <div class="container">
+        <section class="metrics">
+            <div class="metrics-grid">
+                <div class="metric">
+                    <div class="metric-num">7.700</div>
+                    <div class="metric-label">visualizaciones en los últimos 30 días</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-num">73,5 %</div>
+                    <div class="metric-label">de mi alcance llega a gente que aún no me sigue</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-num">4.079</div>
+                    <div class="metric-label">cuentas alcanzadas en un mes</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-num">123</div>
+                    <div class="metric-label">leads generados en una campaña para Fitlovas</div>
                 </div>
             </div>
         </section>
