@@ -69,7 +69,7 @@
         .metrics { padding: 8px 0 36px; }
         .metrics-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
             padding: 26px 0;
@@ -223,6 +223,16 @@
             line-height: 1.7;
         }
         .testimonial-card .attribution { font-size: 0.85rem; color: var(--text-light); }
+        .testimonial-card .result {
+            display: inline-block;
+            margin-top: 10px;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 100px;
+        }
         .testimonial-card .attribution strong { color: var(--text); }
 
         /* Services */
@@ -431,10 +441,6 @@
                     <div class="metric-num">4.079</div>
                     <div class="metric-label">cuentas alcanzadas en un mes</div>
                 </div>
-                <div class="metric">
-                    <div class="metric-num">123</div>
-                    <div class="metric-label">leads generados en una campaña para Fitlovas</div>
-                </div>
             </div>
         </section>
     </div>
@@ -542,6 +548,7 @@
                 <div class="testimonial-card">
                     <p class="quote">"¡Todo aprobado! Nos ha encantado cómo ha quedado el vídeo y ya está publicado. Ha sido un placer colaborar contigo. ¡Seguimos en contacto para futuras activaciones!"</p>
                     <div class="attribution"><strong>Fitlovas</strong> · Colaboración pagada + Ads</div>
+                    <div class="result">🏆 Campaña con 123 leads generados</div>
                 </div>
                 <div class="testimonial-card">
                     <p class="quote">"Está perfecto así. Un placer trabajar contigo."</p>
