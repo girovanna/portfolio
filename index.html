@@ -196,8 +196,19 @@
         /* Testimonials */
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(6, 1fr);
             gap: 20px;
+        }
+        /* 3 tarjetas por fila; la última fila (2 tarjetas) queda CENTRADA */
+        .testimonial-card { grid-column: span 2; }
+        .testimonial-card:nth-child(7) { grid-column: 2 / span 2; }
+        @media (max-width: 900px) {
+            .testimonials-grid { grid-template-columns: repeat(4, 1fr); }
+            .testimonial-card:nth-child(7) { grid-column: auto / span 2; }
+        }
+        @media (max-width: 640px) {
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .testimonial-card, .testimonial-card:nth-child(7) { grid-column: auto; }
         }
         .testimonial-card {
             background: var(--white);
