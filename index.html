@@ -208,16 +208,14 @@
             grid-template-columns: repeat(6, 1fr);
             gap: 20px;
         }
-        /* 3 tarjetas por fila; la última fila (2 tarjetas) queda CENTRADA */
+        /* 3 tarjetas por fila (9 tarjetas = 3 filas exactas, sin huecos) */
         .testimonial-card { grid-column: span 2; }
-        .testimonial-card:nth-child(7) { grid-column: 2 / span 2; }
         @media (max-width: 900px) {
             .testimonials-grid { grid-template-columns: repeat(4, 1fr); }
-            .testimonial-card:nth-child(7) { grid-column: auto / span 2; }
         }
         @media (max-width: 640px) {
             .testimonials-grid { grid-template-columns: 1fr; }
-            .testimonial-card, .testimonial-card:nth-child(7) { grid-column: auto; }
+            .testimonial-card { grid-column: auto; }
         }
         .testimonial-card {
             background: var(--white);
@@ -571,6 +569,11 @@
                     <div class="result">🏆 Campaña con 123 leads generados</div>
                 </div>
                 <div class="testimonial-card">
+                    <p class="quote">"Le envié el briefing el jueves y entregó el vídeo súper rápido. Captó perfectamente lo que buscábamos y no hizo falta ninguna revisión. Muy profesional, eficiente y fácil trabajar con ella. ¡100 % recomendada!"</p>
+                    <div class="attribution"><strong>TRIBBU</strong> · App de coche compartido · Reseña verificada en Hicari</div>
+                    <div class="result">🏆 Valoración 10/10 · quieren repetir</div>
+                </div>
+                <div class="testimonial-card">
                     <p class="quote">"Está genial, me gusta mucho. Así está perfecto, un placer trabajar contigo."</p>
                     <div class="attribution"><strong>OCU</strong> · Colaboración pagada</div>
                 </div>
@@ -652,6 +655,11 @@
                 <img src="assets/logos/cuponera.png" alt="La Cuponera" class="brand-logo" title="La Cuponera">
                 <img src="assets/logos/oslo.svg" alt="Oslo Skin Lab" class="brand-logo small" title="Oslo Skin Lab">
                 <img src="assets/logos/umoa.png" alt="UMOA Cosmetics" class="brand-logo small" title="UMOA Cosmetics">
+                <img src="assets/logos/tribbu.png" alt="TRIBBU" class="brand-logo" title="TRIBBU">
+                <img src="assets/logos/cotril.svg" alt="Cotril" class="brand-logo" title="Cotril">
+                <img src="assets/logos/debra.png" alt="Debra" class="brand-logo" title="Debra">
+                <img src="assets/logos/taurus.svg" alt="Taurus" class="brand-logo" title="Taurus">
+                <img src="assets/logos/mellerware.png" alt="Mellerware" class="brand-logo" title="Mellerware">
             </div>
         </section>
     </div>
