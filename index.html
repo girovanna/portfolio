@@ -212,8 +212,11 @@
             grid-template-columns: repeat(6, 1fr);
             gap: 20px;
         }
-        /* 3 tarjetas por fila (9 tarjetas = 3 filas exactas, sin huecos) */
+        /* 3 tarjetas por fila. Con 11, la última fila de 2 va centrada (sin hueco a la derecha) */
         .testimonial-card { grid-column: span 2; }
+        @media (min-width: 901px) {
+            .testimonials-grid > .testimonial-card:nth-child(10) { grid-column: 2 / span 2; }
+        }
         @media (max-width: 900px) {
             .testimonials-grid { grid-template-columns: repeat(4, 1fr); }
         }
@@ -614,6 +617,15 @@
                 <div class="testimonial-card">
                     <p class="quote">"¡Nos encanta! Qué pedazo de vídeo, de verdad. Mil gracias por el cariño."</p>
                     <div class="attribution"><strong>Chic&Love</strong> · Lanzamiento nuevo producto</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"Ha sido un placer trabajar contigo. Desde el primer momento, la comunicación ha sido muy fácil y fluida, y el resultado ha cumplido con nuestras expectativas. Nos ha encantado la naturalidad y el cuidado de los detalles en el contenido, ¡sin duda una experiencia muy positiva! ¡Muchas gracias por todo!"</p>
+                    <div class="attribution"><strong>Mellerware</strong> · Convector sin ventilador</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"¡Nos ha encantado trabajar contigo! Destacamos tu creatividad, la calidad del contenido y el cariño que pones en cada detalle. Has sabido transmitir la esencia de nuestra marca de una forma muy natural y cercana. ¡Una colaboración de 10 que repetiríamos encantados!"</p>
+                    <div class="attribution"><strong>Taurus</strong> · Convector conectado + uso en Ads</div>
+                    <div class="result">🏆 Colaboración de 10 · quieren repetir</div>
                 </div>
             </div>
         </section>
